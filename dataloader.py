@@ -1,4 +1,5 @@
 import pandas as pd
+
 class DataLoader:
     def __init__(self, split_percentage: list[int]):
         self.df = pd.read_csv("hf://datasets/maharshipandya/spotify-tracks-dataset/dataset.csv")
