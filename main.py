@@ -28,5 +28,7 @@ def main():
         print(f"Average popularity in genre {genre}: {avg_popularity[genre]}, Number of songs: {dataset.df[dataset.df['track_genre'] == genre].shape[0]}")
 
 
+
+# fil
 if __name__ == '__main__':
     main()
