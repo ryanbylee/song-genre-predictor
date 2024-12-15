@@ -7,7 +7,10 @@ The dataset used for this project is the Spotify Tracks Dataset, which contains 
 The objective of this project was to classify Spotify tracks into their respective genres based on their numerical and audio-based features. Genre prediction is a challenging multi-class classification problem due to the overlapping characteristics of certain genres and the variability within each genre. Grouping similar genres into broader categories was a key preprocessing step to simplify the classification task and enhance model performance.
 
 #### iii. Key Methodology
-The primary methodology involved using a fully connected feedforward neural network for genre classification. The network consisted of:
+The primary methodology involved using a fully connected feedforward neural network for genre classification. 
+The neural network was selected for its ability to model complex feature interactions, which are essential for multi-class problems like genre classification.
+
+The network consisted of:
 - An input layer with 15 neurons corresponding to the input features.
 - Two hidden layers with 16 and 32 neurons, respectively, using ReLU activation for non-linearity.
 - An output layer with 10 neurons representing the 10 genre categories, optimized using the CrossEntropyLoss function.
@@ -23,9 +26,7 @@ The model achieved a validation accuracy of approximately 27% on the test set. E
 
 Cross-validation was indirectly used by splitting the dataset into train, validation, and test sets to ensure robust evaluation. While the model performed better than random guessing for a 10-class problem, the accuracy was relatively low due to the inherent challenges of genre classification, including overlapping features and noise in the data.
 
-**Key conclusions:**
-- The neural network was selected for its ability to model complex feature interactions, which are essential for multi-class problems like genre classification.
-- Its limitations include sensitivity to hyperparameter choices and the need for large amounts of training data. Future work could address these by exploring data augmentation or advanced architectures such as convolutional or recurrent neural networks.
+Its limitations include sensitivity to hyperparameter choices and the need for large amounts of training data. Future work could address these by exploring data augmentation or advanced architectures such as convolutional or recurrent neural networks.
 
 #### v. Usage Instructions
 To use this code for genre prediction, follow these steps:
@@ -35,30 +36,8 @@ To use this code for genre prediction, follow these steps:
    ```bash
    pip install numpy pandas torch matplotlib scikit-learn
    ```
-
-2. **Preprocess the Dataset**:
-   Load the dataset and preprocess it by:
-   - Removing rows with missing values and duplicate entries.
-   - Grouping genres into broader categories using the provided mapping.
-   - Encoding the genres and standardizing numerical features.
-
-3. **Prepare the Dataset**:
-   Convert the preprocessed data into PyTorch tensors and split it into training, validation, and test sets. Use the provided `Track_dataset` class for efficient data handling.
-
-4. **Train the Neural Network**:
-   Train the model by running the training loop provided in the code. Adjust the number of epochs and learning rate as needed.
-
-5. **Evaluate the Model**:
-   Use the validation and test datasets to evaluate the model's performance. Visualize training and validation loss using the included plotting function.
-
-6. **Make Predictions**:
-   Once trained, the model can be used to predict the genre of new tracks by passing their features through the trained neural network.
-
-7. **Run the Code**:
+2. **Run the Code**:
    To execute the project, run the following Jupyter notebook: 
    ```
    genre_predictor.ipynb
    ```
-
-This project provides a foundational approach to genre prediction using neural networks. While the current results highlight some limitations, the methodology can be extended and improved with additional features or advanced architectures.
-
